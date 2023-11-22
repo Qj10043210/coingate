@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><Server port="8005" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener"/>
+ 
+ 
+  <Listener SSLEngine="on" className="org.apache.catalina.core.AprLifecycleListener"/>
+  
+  
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener"/>
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener"/>
+
+ 
+  <GlobalNamingResources>
+   
+    <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
+  </GlobalNamingResources>
+
+  
+  <Service name="Catalina">
+
+     <Connector port="8080" protocol="HTTP/1.1"
+                   connectionTimeout="20000"
+                   redirectPort="8443" />
+      <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+           maxThreads="150" SSLEnabled="true"
+           scheme="https" secure="true"
+           keystoreFile="file:/C:/TeamProjectFinal/coinMachine/src/main/resources/keystore.jks"
+           keystorePass="123456"
+           keyAlias="mykey"
+           clientAuth="false" sslProtocol="TLS"/>
+
+ 	<!-- keytool -genkey -alias mykey -keyalg RSA -keystore keystore.jks -keysize 2048 (java bin 폴더에 있음) -->
+    <Engine defaultHost="localhost" name="Catalina">
+
+      
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+       
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm" resourceName="UserDatabase"/>
+      </Realm>
+
+      <Host appBase="webapps" autoDeploy="true" name="localhost" unpackWARs="true">
+
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
+
+      <Context docBase="coinMachine" path="/coingate" reloadable="true" source="org.eclipse.jst.jee.server:coinMachine"/></Host>
+    </Engine>
+  </Service>
+</Server>
