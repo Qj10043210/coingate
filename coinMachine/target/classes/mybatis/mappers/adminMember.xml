@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.adminMember">
+	<resultMap id="adminMemResult" type="adminMemberVo">
+		<result property="a_m_no" column="a_m_no" />
+        <result property="a_m_approval" column="a_m_approval" />
+        <result property="a_m_id" column="a_m_id" />
+        <result property="a_m_pw" column="a_m_pw" />
+        <result property="a_m_name" column="a_m_name" />
+        <result property="a_m_gender" column="a_m_gender" />
+        <result property="a_m_mail" column="a_m_mail" />
+        <result property="a_m_phone" column="a_m_phone" />
+        <result property="a_m_reg_date" column="a_m_reg_date" />
+        <result property="a_m_mod_date" column="a_m_mod_date" />
+	</resultMap> 
+	<!-- 
+	<resultMap id="memResult" type="java.util.HashMap">
+      <result property="id" column="id" />
+      <result property="pwd" column="pwd" />
+      <result property="name" column="name" />
+      <result property="email" column="email" />
+      <result property="joinDate" column="joinDate" />
+   </resultMap> -->
+
+
+	<select id="selectAdmins" resultMap="adminMemResult">
+      <![CDATA[
+         SELECT * FROM tbl_admin_member ORDER BY a_m_name ASC	 	
+      ]]>
+	</select>
+	
+	<select id="selectAdmin" resultMap="adminMemResult" parameterType="String">
+      <![CDATA[
+         SELECT * FROM tbl_admin_member WHERE a_m_id = #{a_m_id}	 	
+      ]]>
+	</select>
+	
+	<select id="idCheck" resultType="int" parameterType="String">
+		SELECT Count(*) FROM tbl_admin_member WHERE a_m_id = #{a_m_id}
+	</select>
+
+	<insert id="insertAdminAccount"  parameterType="adminMemberVo">
+			INSERT INTO tbl_admin_member(
+			<if test='a_m_id.equals("coinmaster")'>a_m_approval,</if>
+			a_m_id, a_m_pw, a_m_name, a_m_gender, a_m_mail, a_m_phone, a_m_reg_date, a_m_mod_date
+			)
+			VALUES (
+			<if test='a_m_id.equals("coinmaster")'>1,</if>
+			#{a_m_id}, #{a_m_pw}, #{a_m_name}, #{a_m_gender}, #{a_m_mail}, #{a_m_phone}, now(), now()
+			)
+	</insert>
+	
+	<update id="updateAdminAccount" parameterType="adminMemberVo">
+			UPDATE tbl_admin_member SET
+			a_m_pw = #{a_m_pw}, a_m_name = #{a_m_name}, a_m_gender = #{a_m_gender}, a_m_mail = #{a_m_mail}, a_m_phone = #{a_m_phone}, a_m_mod_date = now()
+			WHERE a_m_no = #{a_m_no}  
+	</update>
+	
+	<select id="selectAdminAccount" resultMap="adminMemResult" parameterType="int">
+		SELECT * FROM tbl_admin_member WHERE a_m_no = #{a_m_no}
+	</select>
+	
+	<select id="selectAdminE" resultMap="adminMemResult" parameterType="hashmap">
+		SELECT * FROM tbl_admin_member WHERE a_m_id = #{a_m_id} And a_m_name = #{a_m_name} And a_m_mail = #{a_m_mail}
+	</select>
+	
+</mapper>
