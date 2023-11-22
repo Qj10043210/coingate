@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+.row {
+  font-family: Galmuri9;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.tx_c {
+  text-align: center;
+}
+
+#section {
+  min-height: 700px;
+}
+
+.total_rank {
+  border-spacing: 0px;
+  line-height: 30px;
+}
+.total_rank .head {
+  background-color: #f2f2f2;
+}
+.total_rank tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.total_rank tr:hover {
+  background-color: #e0e0e0;
+}/*# sourceMappingURL=ranking.css.map */

@@ -1,0 +1,183 @@
+@charset "UTF-8";
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
+#EachPage_Body{
+	max-width: 1360px;
+	margin: 0 auto;
+	font-family: Galmuri9;
+}
+
+#EachPage_Body *.flex{
+	display: flex;
+}
+
+#EachPage_Body tr.up{
+	color: #ff8200;
+}
+#EachPage_Body tr.down{
+	color: #3464ae;
+}
+
+#EachPage_MiddleSideDiv{
+	width: 960px;
+}
+#EachPage_LeftSide_TableDiv{
+	border: solid 1px #ccc;
+}
+#EachPage_MiddleSideDiv{
+	border-top: solid 1px #ccc;
+	border-right: solid 1px #ccc;
+}
+#EachPage_tableLeft{
+	width: 400px;
+}
+#EachPage_tableHead{
+    border-bottom: solid 1px #ccc;
+}
+#EachPage_tableHead thead{
+    height: 50px;
+}
+#EachPage_tableHead thead th{
+	width: 100px;
+}	
+#EachPage_tableHead thead th:nth-child(3){
+	width:120px;
+	text-align: end;
+	padding-right: 15px
+}
+#EachPage_tableHead thead th:nth-child(4){
+	width:80px
+}
+#coinlist{
+	height: 820px;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+#EachPage_tableLeft tbody tr td{
+	width: 100px;
+	text-align: end;
+	font-size: 14px;
+}
+#EachPage_tableLeft tbody tr td:nth-child(1){
+	padding-left: 20px;
+	width: 70px;
+	text-align: start;
+	font-size: 16px;
+} 
+#EachPage_tableLeft tbody tr td:nth-child(2){
+	padding-right: 10px;
+}
+
+#bottom{
+	border-bottom: solid 1px #ccc;
+	border-top: solid 1px #ccc;
+	height: 288px;
+    padding: 10px;
+}
+#EachPage_MiddleSide_TitleDiv{
+	padding-top: 20px;
+	padding-left: 20px;
+	font-size: 30px;
+	font-weight: border;
+}
+#EachPage_MiddleSide_AskBidDiv{
+	padding: 15px;
+	margin-right: 20px;
+}
+#EachPage_MiddleSide_AskBidDiv #orderBox{
+    padding-right:10px;
+    padding-left:10px;
+}
+#EachPage_MiddleSide_AskBidDiv #orderBox #saleOrder{
+	margin-top: 25px;
+	text-align: center;
+}
+#orderList{
+	width:260px;
+}
+#orderList >div:nth-child(1) >div:nth-child(1){
+	width: 100px;
+	text-align:end;
+	padding-right: 20px;
+}
+#saleOrder{
+	height: 110px;
+}
+#orderList .price{
+	width: 110px;
+	text-align:end;
+	padding-right: 10px;
+}
+#orderList .quant{
+	width: 150px;
+	text-align:start;
+	padding-left: 10px;
+}
+#orderList .asks{
+	background-color: #ffbebe;
+}
+#orderList .bids{
+	background-color: #99defa;
+}
+
+#area2 {
+  padding-left: 20px;
+}
+#area2 #selsctTradeType {
+  flex-direction: column;
+  font-size: 20px;
+  text-align: center;
+  border-right: 1px solid #ccc;
+}
+#area2 #selsctTradeType > div {
+  padding: 10px;
+  padding-top: 20px;
+  height: 115px;
+}
+#area2 #selsctTradeType #forBuy.on {
+  box-shadow: inset 5px 0 0 0 #ff8200;
+  color: #ff8200;
+}
+#area2 #selsctTradeType #forSale.on {
+  box-shadow: inset 5px 0 0 0 #3464ae;
+  color: #3464ae;
+}
+#area2 #orderForm {
+  padding: 20px;
+}
+#order{
+	width: 390px;
+	font-size: 20px;
+	flex-direction: column;
+}
+#order .orderDiv{
+	width: 360px;
+	padding-top: 20px;
+	padding-left: 30px;
+}
+#order .orderDiv{
+	justify-content: space-between;
+}
+#order .orderDiv > div:nth-child(1){
+	padding-left: 10px;
+	color: #666;
+}
+#order .orderDiv input{
+	width:200px;
+}
+#orderBtn{
+	width: 200px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	padding: 10px;
+	border-radius: 10px;
+	color:#fff;
+	font-weight: bolder;
+}
+#orderBtn.Buy{
+	background-color: #ff8200;
+}
+#orderBtn.Sale{
+	background-color: #3464ae;
+}

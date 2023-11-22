@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css");
+.row {
+  font-family: Galmuri9;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.tx_c {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+input::placeholder {
+    font-family:Galmuri9;
+    font-size: 16px;
+    color:#000;
+}
+
+.dropdown_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: black;
+  color: white;
+  padding: 10px 0;
+  border: none;
+  cursor: pointer;
+  margin: 0 0 20px;
+  width: 160px;
+  text-align: center;
+}
+
+.currency_type{
+    position:relative;
+}
+.currency_type input:nth-child(1) {
+    width: 400px;
+    line-height: 40px;
+    font-family: Galmuri9;
+    border-radius: 5px;
+    border:2px solid #000;
+}
+
+.currency_type #searchbtn {
+    position:absolute; right:0%; top:0%;
+    width: 25%;
+    height: 46px;
+    background: #000;
+    border:2px solid #000;
+    border-left:none;
+    font-size: 16px;
+    color: #fff;
+    font-family: Galmuri9;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 38px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: #333;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
+#section {
+  min-height: 700px;
+}
+
+.trade_history {
+  border-spacing: 0px;
+  line-height: 30px;
+}
+.trade_history .head {
+  background-color: #f2f2f2;
+}
+.trade_history tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.trade_history tr:hover {
+  background-color: #e0e0e0;
+}/*# sourceMappingURL=trade_history.css.map */
